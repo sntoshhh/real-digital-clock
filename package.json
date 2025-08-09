@@ -1,0 +1,77 @@
+{
+  "name": "real-digital-clock",
+  "version": "7.0.0",
+  "description": "Classic 7-segment based real digital clock for react apps!",
+  "type": "module",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "scripts": {
+    "dev": "vite dev -c example/vite.config.ts",
+    "build:types": "rm -rf dist && tsc -p tsconfig.build.json",
+    "build:js": "rollup -c",
+    "build": "npm run build:types && npm run build:js",
+    "preview": "vite preview -c example/vite.config.ts",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write \"{src,example}/**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "format:check": "prettier --check \"{src,example}/**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "digital clock",
+    "clock",
+    "digital-clock",
+    "digits",
+    "digital display",
+    "svg",
+    "7-segment",
+    "timer",
+    "numeric readout",
+    "customizable",
+    "react",
+    "react-clock",
+    "react-digital-clock",
+    "typescript",
+    "npm module",
+    "no fonts"
+  ],
+  "author": "Santosh Pandey (admin@sntosh.in)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/react": ">=18.0.0",
+    "@types/react-dom": ">=18.0.0",
+    "@types/rollup": "latest",
+    "@typescript-eslint/eslint-plugin": "^7.13.0",
+    "@typescript-eslint/parser": "^7.13.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "prettier": "^3.3.2",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.36.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  }
+}
